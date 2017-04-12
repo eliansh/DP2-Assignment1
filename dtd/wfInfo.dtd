@@ -1,0 +1,29 @@
+<!ELEMENT workFlowSystem (workFlows)>
+<!ELEMENT workFlows (workFlow*)>
+<!ELEMENT workFlow (actions, processes)>
+<!ELEMENT actions (action*)>
+<!ELEMENT action (simpleAct?|processAct?)>
+<!ELEMENT simpleAct (nextAction*)>
+<!ELEMENT nextAction EMPTY>
+<!ELEMENT processAct EMPTY>
+<!ELEMENT processes (process*)>
+<!ELEMENT process (actionStatuses)>
+<!ELEMENT actionStatuses (actionStatus*)>
+<!ELEMENT actionStatus (actor?)>
+<!ELEMENT actor EMPTY>
+<!ATTLIST workFlow flowName ID #REQUIRED>
+<!ATTLIST action 
+	actionName CDATA #REQUIRED
+	actionRole CDATA #REQUIRED
+	automaticallyInstantiated (true|false) #REQUIRED>
+<!ATTLIST nextAction nextPossibleAction CDATA #REQUIRED>
+<!ATTLIST processAct relatedWorkFlow CDATA #REQUIRED>
+<!ATTLIST process startTime CDATA #REQUIRED>
+<!ATTLIST actionStatus
+	actionStatName CDATA #REQUIRED
+	terminated (true|false) #REQUIRED
+	terminationTime CDATA #IMPLIED
+	takenInCharge (true|false) #REQUIRED>
+<!ATTLIST actor
+	actorName CDATA #REQUIRED
+	actorRole CDATA #REQUIRED>

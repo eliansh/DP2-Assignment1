@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE workFlowSystem SYSTEM "wfInfo.dtd">
+<workFlowSystem>
+<workFlows>
+<workFlow flowName="PrepaidSale">
+<actions>
+<action actionName="PaymentReception" actionRole="Accountingman" automaticallyInstantiated="false">
+<simpleAct>
+<nextAction nextPossibleAction="GoodsDelivery"/>
+</simpleAct>
+</action>
+<action actionName="InvoiceIssuance" actionRole="Accountingman" automaticallyInstantiated="true">
+<simpleAct>
+<nextAction nextPossibleAction="PaymentReception"/>
+</simpleAct>
+</action>
+<action actionName="GoodsDelivery" actionRole="Warehouseman" automaticallyInstantiated="false">
+<simpleAct/>
+</action>
+</actions>
+<processes>
+<process startTime="14/11/2015 18:53:40 CET">
+<actionStatuses>
+<actionStatus actionStatName="InvoiceIssuance" takenInCharge="true" terminated="true" terminationTime="16/11/2015 11:09:40 CET">
+<actor actorName="Marco Fireman" actorRole="Accountingman"/>
+</actionStatus>
+<actionStatus actionStatName="PaymentReception" takenInCharge="true" terminated="true" terminationTime="18/11/2015 10:33:40 CET">
+<actor actorName="Enrica Gastaldo" actorRole="Accountingman"/>
+</actionStatus>
+<actionStatus actionStatName="GoodsDelivery" takenInCharge="true" terminated="true" terminationTime="18/11/2015 13:09:40 CET">
+<actor actorName="Corny Elkan" actorRole="Warehouseman"/>
+</actionStatus>
+</actionStatuses>
+</process>
+<process startTime="05/10/2015 13:04:40 CEST">
+<actionStatuses>
+<actionStatus actionStatName="InvoiceIssuance" takenInCharge="true" terminated="true" terminationTime="06/10/2015 22:02:40 CEST">
+<actor actorName="Marco Fireman" actorRole="Accountingman"/>
+</actionStatus>
+<actionStatus actionStatName="PaymentReception" takenInCharge="false" terminated="false"/>
+</actionStatuses>
+</process>
+<process startTime="11/11/2015 14:53:40 CET">
+<actionStatuses>
+<actionStatus actionStatName="InvoiceIssuance" takenInCharge="true" terminated="true" terminationTime="12/11/2015 19:42:40 CET">
+<actor actorName="Enrica Gastaldo" actorRole="Accountingman"/>
+</actionStatus>
+<actionStatus actionStatName="PaymentReception" takenInCharge="true" terminated="true" terminationTime="14/11/2015 03:27:40 CET">
+<actor actorName="Mario Chemin" actorRole="Accountingman"/>
+</actionStatus>
+<actionStatus actionStatName="GoodsDelivery" takenInCharge="true" terminated="true" terminationTime="15/11/2015 17:35:40 CET">
+<actor actorName="Paola Perla" actorRole="Warehouseman"/>
+</actionStatus>
+</actionStatuses>
+</process>
+</processes>
+</workFlow>
+<workFlow flowName="NormalSale">
+<actions>
+<action actionName="GoodsDelivery" actionRole="Warehouseman" automaticallyInstantiated="true">
+<simpleAct/>
+</action>
+<action actionName="InvoiceIssuance" actionRole="Accountingman" automaticallyInstantiated="true">
+<simpleAct>
+<nextAction nextPossibleAction="PaymentReception"/>
+</simpleAct>
+</action>
+<action actionName="PaymentReception" actionRole="Accountingman" automaticallyInstantiated="false">
+<simpleAct/>
+</action>
+</actions>
+<processes>
+<process startTime="13/10/2015 16:00:40 CEST">
+<actionStatuses>
+<actionStatus actionStatName="GoodsDelivery" takenInCharge="false" terminated="false"/>
+<actionStatus actionStatName="InvoiceIssuance" takenInCharge="false" terminated="false"/>
+</actionStatuses>
+</process>
+<process startTime="16/10/2015 18:04:40 CEST">
+<actionStatuses>
+<actionStatus actionStatName="GoodsDelivery" takenInCharge="true" terminated="false">
+<actor actorName="Henry H Elkan" actorRole="Warehouseman"/>
+</actionStatus>
+<actionStatus actionStatName="InvoiceIssuance" takenInCharge="true" terminated="true" terminationTime="17/10/2015 13:39:40 CEST">
+<actor actorName="Mario Chemin" actorRole="Accountingman"/>
+</actionStatus>
+<actionStatus actionStatName="PaymentReception" takenInCharge="true" terminated="false">
+<actor actorName="Enrica Gastaldo" actorRole="Accountingman"/>
+</actionStatus>
+</actionStatuses>
+</process>
+<process startTime="02/11/2015 14:09:40 CET">
+<actionStatuses>
+<actionStatus actionStatName="GoodsDelivery" takenInCharge="true" terminated="false">
+<actor actorName="Corny Elkan" actorRole="Warehouseman"/>
+</actionStatus>
+<actionStatus actionStatName="InvoiceIssuance" takenInCharge="false" terminated="false"/>
+</actionStatuses>
+</process>
+<process startTime="12/10/2015 10:46:40 CEST">
+<actionStatuses>
+<actionStatus actionStatName="GoodsDelivery" takenInCharge="true" terminated="true" terminationTime="13/10/2015 03:56:40 CEST">
+<actor actorName="Henry H Elkan" actorRole="Warehouseman"/>
+</actionStatus>
+<actionStatus actionStatName="InvoiceIssuance" takenInCharge="true" terminated="false">
+<actor actorName="Enrica Gastaldo" actorRole="Accountingman"/>
+</actionStatus>
+</actionStatuses>
+</process>
+<process startTime="23/10/2015 14:19:40 CEST">
+<actionStatuses>
+<actionStatus actionStatName="GoodsDelivery" takenInCharge="true" terminated="true" terminationTime="24/10/2015 17:00:40 CEST">
+<actor actorName="Paola Perla" actorRole="Warehouseman"/>
+</actionStatus>
+<actionStatus actionStatName="InvoiceIssuance" takenInCharge="true" terminated="true" terminationTime="24/10/2015 15:16:40 CEST">
+<actor actorName="Enrica Gastaldo" actorRole="Accountingman"/>
+</actionStatus>
+<actionStatus actionStatName="PaymentReception" takenInCharge="true" terminated="false">
+<actor actorName="Mario Chemin" actorRole="Accountingman"/>
+</actionStatus>
+</actionStatuses>
+</process>
+</processes>
+</workFlow>
+<workFlow flowName="SaleManagement">
+<actions>
+<action actionName="AcceptOrder" actionRole="Salesman" automaticallyInstantiated="true">
+<simpleAct>
+<nextAction nextPossibleAction="PrepaidSale"/>
+<nextAction nextPossibleAction="NormalSale"/>
+</simpleAct>
+</action>
+<action actionName="PrepaidSale" actionRole="SalesManager" automaticallyInstantiated="false"/>
+<action actionName="NormalSale" actionRole="SalesManager" automaticallyInstantiated="false"/>
+</actions>
+<processes>
+<process startTime="26/10/2015 03:31:40 CET">
+<actionStatuses>
+<actionStatus actionStatName="AcceptOrder" takenInCharge="true" terminated="false">
+<actor actorName="Mauro Neri" actorRole="Salesman"/>
+</actionStatus>
+</actionStatuses>
+</process>
+<process startTime="09/10/2015 11:38:40 CEST">
+<actionStatuses>
+<actionStatus actionStatName="AcceptOrder" takenInCharge="true" terminated="true" terminationTime="11/10/2015 11:27:40 CEST">
+<actor actorName="Pippo Fumagai" actorRole="Salesman"/>
+</actionStatus>
+<actionStatus actionStatName="NormalSale" takenInCharge="true" terminated="true" terminationTime="12/10/2015 06:12:40 CEST">
+<actor actorName="Matteo Eijk" actorRole="SalesManager"/>
+</actionStatus>
+</actionStatuses>
+</process>
+<process startTime="18/11/2015 20:20:40 CET">
+<actionStatuses>
+<actionStatus actionStatName="AcceptOrder" takenInCharge="true" terminated="true" terminationTime="19/11/2015 08:01:40 CET">
+<actor actorName="Carlo Del Saio" actorRole="Salesman"/>
+</actionStatus>
+<actionStatus actionStatName="PrepaidSale" takenInCharge="true" terminated="true" terminationTime="20/11/2015 04:29:40 CET">
+<actor actorName="Anreina Fumagai" actorRole="SalesManager"/>
+</actionStatus>
+</actionStatuses>
+</process>
+</processes>
+</workFlow>
+<workFlow flowName="ArticleProduction">
+<actions>
+<action actionName="Publication" actionRole="Editor" automaticallyInstantiated="false">
+<simpleAct/>
+</action>
+<action actionName="Checking" actionRole="Editor" automaticallyInstantiated="false">
+<simpleAct>
+<nextAction nextPossibleAction="Revising"/>
+<nextAction nextPossibleAction="Publication"/>
+</simpleAct>
+</action>
+<action actionName="Writing" actionRole="Journalist" automaticallyInstantiated="true">
+<simpleAct>
+<nextAction nextPossibleAction="Checking"/>
+</simpleAct>
+</action>
+<action actionName="Revising" actionRole="Journalist" automaticallyInstantiated="false">
+<simpleAct>
+<nextAction nextPossibleAction="Checking"/>
+</simpleAct>
+</action>
+</actions>
+<processes>
+<process startTime="16/11/2015 01:14:40 CET">
+<actionStatuses>
+<actionStatus actionStatName="Writing" takenInCharge="true" terminated="true" terminationTime="17/11/2015 04:49:40 CET">
+<actor actorName="Mary Marini" actorRole="Journalist"/>
+</actionStatus>
+<actionStatus actionStatName="Checking" takenInCharge="true" terminated="true" terminationTime="18/11/2015 01:33:40 CET">
+<actor actorName="Richard Pascal" actorRole="Editor"/>
+</actionStatus>
+<actionStatus actionStatName="Publication" takenInCharge="true" terminated="false">
+<actor actorName="Andrea Verdi" actorRole="Editor"/>
+</actionStatus>
+</actionStatuses>
+</process>
+<process startTime="20/10/2015 08:11:40 CEST">
+<actionStatuses>
+<actionStatus actionStatName="Writing" takenInCharge="true" terminated="true" terminationTime="21/10/2015 13:40:40 CEST">
+<actor actorName="Paolo Lamarn" actorRole="Journalist"/>
+</actionStatus>
+<actionStatus actionStatName="Checking" takenInCharge="true" terminated="true" terminationTime="22/10/2015 08:02:40 CEST">
+<actor actorName="Richard Pascal" actorRole="Editor"/>
+</actionStatus>
+<actionStatus actionStatName="Revising" takenInCharge="true" terminated="false">
+<actor actorName="Paolo Lamarn" actorRole="Journalist"/>
+</actionStatus>
+</actionStatuses>
+</process>
+<process startTime="05/11/2015 23:18:40 CET">
+<actionStatuses>
+<actionStatus actionStatName="Writing" takenInCharge="true" terminated="true" terminationTime="06/11/2015 03:03:40 CET">
+<actor actorName="Mary Marini" actorRole="Journalist"/>
+</actionStatus>
+<actionStatus actionStatName="Checking" takenInCharge="true" terminated="false">
+<actor actorName="Andrea Verdi" actorRole="Editor"/>
+</actionStatus>
+</actionStatuses>
+</process>
+<process startTime="08/11/2015 19:44:40 CET">
+<actionStatuses>
+<actionStatus actionStatName="Writing" takenInCharge="true" terminated="false">
+<actor actorName="Corny Chemin" actorRole="Journalist"/>
+</actionStatus>
+</actionStatuses>
+</process>
+<process startTime="29/10/2015 10:27:40 CET">
+<actionStatuses>
+<actionStatus actionStatName="Writing" takenInCharge="true" terminated="true" terminationTime="30/10/2015 04:18:40 CET">
+<actor actorName="Paolo Lamarn" actorRole="Journalist"/>
+</actionStatus>
+<actionStatus actionStatName="Checking" takenInCharge="true" terminated="true" terminationTime="30/10/2015 04:27:40 CET">
+<actor actorName="Andrea Verdi" actorRole="Editor"/>
+</actionStatus>
+<actionStatus actionStatName="Publication" takenInCharge="true" terminated="false">
+<actor actorName="Andrea Verdi" actorRole="Editor"/>
+</actionStatus>
+</actionStatuses>
+</process>
+<process startTime="25/10/2015 14:13:40 CET">
+<actionStatuses>
+<actionStatus actionStatName="Writing" takenInCharge="true" terminated="true" terminationTime="26/10/2015 09:59:40 CET">
+<actor actorName="Mary Marini" actorRole="Journalist"/>
+</actionStatus>
+<actionStatus actionStatName="Checking" takenInCharge="true" terminated="true" terminationTime="28/10/2015 08:08:40 CET">
+<actor actorName="Marta Menegai" actorRole="Editor"/>
+</actionStatus>
+<actionStatus actionStatName="Publication" takenInCharge="true" terminated="true" terminationTime="29/10/2015 10:05:40 CET">
+<actor actorName="Marta Menegai" actorRole="Editor"/>
+</actionStatus>
+</actionStatuses>
+</process>
+</processes>
+</workFlow>
+</workFlows>
+</workFlowSystem>

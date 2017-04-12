@@ -1,0 +1,7 @@
+I considered Simple Action and Process Action as a child of Action Reader because they inherited all the attributes from their parent(action) so if they were sibling with Action Reader it would increase the redundancy. Each action can be simple action OR process action so it cannot happen at the same time so I consider (simpleAct?|processAct?). each simpleAct can has nextPossibleActions each containing the nextpossibleAction  and each processAct only has an attribute with the name of relatedWorkFlow.
+
+each actionStatusReader can optionally have an actor as a child so I consider it (actor?). and it can optionally have a terminationTime so I consider it IMPLIED attribute.
+I considered other attributes as REQUIRED when they are mandatory.
+
+I specified ID when the value must be unique (within the whole document) flowName and unfortunately I couldn't consider actionName as an ID because it wasn't unique in whole document
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE workFlowSystem SYSTEM "wfInfo.dtd">
+<WorkFlowSystem>
+	<workFlows>
+		<workFlow flowName="ArticleProduction">
+			<actions>
+				<action actionName="Revising" actionRole="Journalist" automaticallyInstantiated="false">
+					<simpleAct>
+						<nextAction nextPossibleAction="Checking"/>
+					</simpleAct>
+				</action>
+				<action actionName="Checking" actionRole="Editor" automaticallyInstantiated="false">
+					<simpleAct>
+						<nextAction nextPossibleAction="Revising"/>
+						<nextAction nextPossibleAction="Publication"/>
+					</simpleAct>
+				</action>
+				<action actionName="NormalSale" actionRole="SalesManager" automaticallyInstantiated="false">
+					<processAct relatedWorkFlow="NormalSale" />
+				</action>
+			</actions>
+			<processes>
+				<process startTime="31/10/2015 21:45:40 CET">
+					<actionStatuses>
+						<actionStatus actionStatName="Writing" takenInCharge="true" terminated="true" terminationTime="01/11/2015 21:56:40 CET">
+							<actor actorName="Henry H Coleman" actorRole="Journalist"/>
+						</actionStatus>
+						<actionStatus actionStatName="Checking" takenInCharge="true" terminated="true" terminationTime="03/11/2015 12:22:40 CET">
+							<actor actorName="Ascanio Neri" actorRole="Editor"/>
+						</actionStatus>
+						<actionStatus actionStatName="Revising" takenInCharge="true" terminated="true" terminationTime="01/11/2015 16:50:40 CET">
+							<actor actorName="Henry H Coleman" actorRole="Journalist"/>
+						</actionStatus>
+					</actionStatuses>
+				</process>
+				<process startTime="15/10/2015 09:09">
+					<actionStatuses>
+						<actionStatus actionStatName="Writing" takenInCharge="true" terminated="false">
+							<actor actorName="Maria Gastaldo" actorRole="Journalist"/>
+						</actionStatus>
+					</actionStatuses>
+				</process>
+			</processes>
+		</workFlow>
+	</workFlows>
+</WorkFlowSystem>
